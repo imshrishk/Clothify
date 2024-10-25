@@ -1,26 +1,14 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "src/api/products.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
+    { "src": "src/api/products.js", "use": "@vercel/node" },
+    { "src": "dist/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "src/api/products.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/api/(.*)", "dest": "src/api/products.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ],
   "env": {
-    "API_URL": "https://clothify-shop.vercel.app/"
+    "API_URL": "https://clothify-shop.vercel.app/api"
   }
 }
