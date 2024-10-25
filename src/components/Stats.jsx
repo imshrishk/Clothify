@@ -1,4 +1,4 @@
-import "../styles/Stats.css";
+import "../styles/Stats.module.css";
 const Stats = () => {
   return (
     <div className="container flex flex-col mx-auto">

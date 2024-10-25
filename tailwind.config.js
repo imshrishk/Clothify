@@ -5,8 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    themes: ["dark", "winter"],
+    extend: {}, // Add any custom theme extensions here if needed
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('daisyui'),
+  ],
+  daisyui: {
+    themes: ["dark", "winter"], // Configure themes for daisyUI
+  },
 }
-

@@ -1,3 +1,4 @@
+// App.jsx
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
   About,
@@ -19,6 +20,7 @@ import { landingLoader } from "./pages/Landing";
 import { singleProductLoader } from "./pages/SingleProduct";
 import { shopLoader } from "./pages/Shop";
 import { ToastContainer } from "react-toastify";
+import ErrorBoundary from './components/ErrorBoundary';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,6 @@ const router = createBrowserRouter([
         path: "shop",
         element: <Shop />,
         loader: shopLoader
-
       },
       {
         path: "shop/product/:id",
@@ -91,10 +92,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <ErrorBoundary> {/* Wrap RouterProvider in ErrorBoundary */}
       <RouterProvider router={router} />
       <ToastContainer position="top-center" />
-    </>
+    </ErrorBoundary>
   );
 }
 

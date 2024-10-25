@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaHeartCrack, FaCartPlus } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { removeFromWishlist } from "../features/wishlist/wishlistSlice";
@@ -11,22 +11,22 @@ const WishItem = ({ item, counter }) => {
 
   const removeFromWishlistHandler = async (product) => {
     try {
-      const getResponse = await axios.get(
+      const response = await axios.get(
         `http://localhost:8080/user/${localStorage.getItem("id")}`
       );
-      const userObj = getResponse.data;
-  
+      const userObj = response.data;
+
       userObj.userWishlist = userObj.userWishlist || [];
-  
+
       const newWishlist = userObj.userWishlist.filter(item => product.id !== item.id);
-  
+
       userObj.userWishlist = newWishlist;
-  
+
       await axios.put(
         `http://localhost:8080/user/${localStorage.getItem("id")}`,
         userObj
       );
-  
+
       // Dispatch the removeFromWishlist action with the product data
       dispatch(removeFromWishlist({ userObj }));
       toast.success("Product removed from the wishlist!");

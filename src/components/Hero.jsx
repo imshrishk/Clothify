@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/Hero.css";
+import "../styles/Hero.module.css";
 const Hero = () => {
   return (
     <div className="hero bg-base-200 bg-blend-overlay">
@@ -9,7 +9,6 @@ const Hero = () => {
         <p className="py-6 text-2xl max-md:text-lg text-accent-content">
         Discover the trendiest styles and redefine your wardrobe. 
         Step into a world where fashion meets passion and make every outfit a statement.
-          et a id nisi.
         </p>
         <Link to="/shop" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">Shop Now</Link>
       </div>

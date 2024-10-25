@@ -1,5 +1,5 @@
 //import React from "react";
-import "../styles/Landing.css";
+import "../styles/Landing.module.css";
 import { Hero, ProductElement, Stats } from "../components";
 // import { SortinBanner } from "sortin-vite-library"; // Comment out or remove this line
 import { useLoaderData } from "react-router-dom";

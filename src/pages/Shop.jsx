@@ -6,7 +6,7 @@ import {
   ProductElement,
   SectionTitle,
 } from "../components";
-import "../styles/Shop.css";
+import "../styles/Shop.module.css";
 import axios from "axios";
 import { useLoaderData, useNavigate, useSearchParams } from "react-router-dom";
 import { nanoid } from "nanoid";
