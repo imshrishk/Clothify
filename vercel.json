@@ -2,22 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/store.js",
+      "src": "src/api/products.js",
       "use": "@vercel/node"
     },
     {
-      "src": "src/index.html",
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "src/store.js"
+      "dest": "src/api/products.js"
     },
     {
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "API_URL": "https://clothify-shop.vercel.app/"
+  }
 }

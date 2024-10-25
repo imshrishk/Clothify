@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vercel dev",
+    "start": "concurrently \"npm run dev\" \"npm run json\"",
     "dev": "vite",
+    "json": "json-server --watch src/data/db.json --port 8080 --host 0.0.0.0",
     "build": "vite build",
-    "preview": "vite preview --port 8080",
-    "json": "json-server --watch src/data/db.json --port 8080 --host 0.0.0.0"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
