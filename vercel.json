@@ -2,14 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/api/products.js",
+      "src": "src/store.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/products",
-      "dest": "src/api/products.js"
+      "src": "/api/(.*)",
+      "dest": "src/store.js"
     },
     {
       "src": "/(.*)",
