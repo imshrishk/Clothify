@@ -7,11 +7,10 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'https://clothify-shop.vercel.app',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        target: 'https://clothify-shop.vercel.app/api',
+        changeOrigin: true
       }
-    }
+    }    
   },
   build: {
     outDir: 'dist'

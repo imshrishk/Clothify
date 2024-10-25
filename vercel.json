@@ -11,15 +11,16 @@
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "src/api/products.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.html"
-    }
-  ],
+  {
+    "src": "^/api/(.*)$",
+    "dest": "src/api/products.js",
+    "methods": ["GET", "POST"]
+  },
+  {
+    "src": "/(.*)",
+    "dest": "/dist/index.html"
+  }
+],
   "env": {
     "API_URL": "https://clothify-shop.vercel.app/api"
   }
